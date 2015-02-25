@@ -1,0 +1,53 @@
+<html>
+
+
+<script>
+
+var possibleUsers = [];
+var passwords = [];
+
+function createUser() {
+
+var newUser = document.getElementById("newUser").value;
+var newPass = document.getElementById("newPass").value;
+
+	possibleUsers.push(newUser);
+	passwords.push(newPass);
+	if ((possibleUsers[0] === newUser) && (passwords[0] === newPass)) {
+		confirm("You have signed up!"); 
+		
+	} else {
+		confirm("There has been an error. I don't know how this happened...w")
+	}
+};
+
+
+function show() {
+	
+	var loginInfo = [document.getElementById("userName").value, document.getElementById("password").value ]
+	for( var i=0; i < possibleUsers.length + 1; i++ ) {
+		if ( possibleUsers[i] === loginInfo[0]) {
+			confirm("Username: " + loginInfo[0] + " and " + "Password: " + loginInfo[1] + " matches our records. Logging in...");
+		} 
+	}
+};
+
+</script>
+
+
+<h3>Step 1: Signup</h3>
+
+New Username: <input type="text" id="newUser" value=""> <br> <br>
+
+Create a Password: <input type="text" id="newPass" value=""> <br> <br>
+
+<input type="button" onclick="createUser()" value="Sign Up!"></button>
+
+<br> <br>
+<h3>Step 2: Login</h3>
+Username: <input type="text" id="userName" value="">
+Password: <input type="password" id="password" value=""> <br> <br>
+
+<input type="button" onclick="show()" value="Login"></button>
+
+</html>
